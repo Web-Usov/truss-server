@@ -9,6 +9,11 @@ export default class UserController {
         ctx.body = users
     }
 
+    static getById = async (ctx: Koa.Context) => {
+        const repo  = getRepository(User)
+        let user = await repo.findOne(ctx.params.id)
+        ctx.body = user
+    }
     static addUser = async (ctx: Koa.Context) => {
         
         const userProps = (ctx.request.body as User)

@@ -12,9 +12,7 @@ const router: Router = new Router(routerOpts);
 
 router.get('/', UserController.getAll);
 
-// router.get('/:id', async (ctx: Koa.Context) => {
-//   ctx.body = 'GET SINGLE';
-// });
+router.get('/:id', UserController.getById);
 
 router.post('/',
   Validate({ request: { body: userValidators.createUser } }),

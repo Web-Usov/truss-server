@@ -18,9 +18,7 @@ export default async (ctx: Context, next: () => Promise<any>) => {
 		if (err instanceof AppError) {
 			ctx.body = err.toModel()
 			ctx.status = httpCodes[err.code] ? httpCodes[err.code] : 500
-		} else {
-			// console.log('Internal Error Server',err);
-			
+		} else {			
 			ctx.body = new AppError(10000, 'Internal Error Server', err).toModel()
 			ctx.status = 500
 		}
