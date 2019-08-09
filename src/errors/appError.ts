@@ -12,7 +12,7 @@ export class AppError extends Error {
     public toModel() {
         return {
             code: this.code,
-            message: this.message + ' - ' + this.error.message,
+            message: this.message + (this.error && this.error.message ? ' - ' + this.error.message : ""),
         }
     }
 }
