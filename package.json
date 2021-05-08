@@ -20,7 +20,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "sqlite3": "^4.0.9",
-    "typeorm": "^0.2.18"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/joi": "^14.3.3",
